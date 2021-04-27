@@ -4,9 +4,9 @@
 
 using namespace std;
 
-int main(){
-	Antivirus antivirus(10);
-	antivirus.xSetter(19);
-	cout << antivirus.xGetter() << endl;
-	return 0;
+int main() {
+  Antivirus antivirus(10);
+  antivirus.xSetter(19);
+  cout << antivirus.xGetter() << endl;
+  return 0;
 }
