@@ -10,13 +10,6 @@
 using namespace std;
 
 int main() {
-  Mode testowyObj;
-  string input;
-  cin >> input;
-  testowyObj.setMode(input);
-
-  // Antivirus antivirus(10);
-  // antivirus.xSetter(19);
-  // cout << antivirus.xGetter() << endl;
+  Antivirus antivirus;
   return 0;
 }
