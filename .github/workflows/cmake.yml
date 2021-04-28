@@ -44,7 +44,7 @@ jobs:
       run: ctest
     - name: Check_Formatting_Std
       working-directory: ${{ github.workspace }}
-      # run: clang-format --dry-run --Werror $(find . -name \*.cc -o -name \*.h)
-      run: clang-format ${{ matrix.os }} --Werror
+      run: clang-format --dry-run --Werror $(find . -name \*.cc -o -name \*.h)
+      # run: clang-format ${{ matrix.os }} --Werror
       if: matrix.os == 'ubuntu-20.04' 
       
