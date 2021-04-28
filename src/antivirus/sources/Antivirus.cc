@@ -13,4 +13,13 @@ Antivirus::Antivirus() {
     cin >> input;
     if (mode.setMode(input)) modeSet = true;
   } while (modeSet == false);
+  // initializing routine
+  reportComponentsState();
+}
+
+void Antivirus::reportComponentsState() {
+  if (modeSet)
+    cout << "Mode has been set correctly." << endl;
+  else
+    cout << "Mode is not set." << endl;
 }

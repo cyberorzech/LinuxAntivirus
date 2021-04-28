@@ -7,6 +7,7 @@ class Antivirus {
 
  public:
   Antivirus();
+  void reportComponentsState();
 };
 
 #endif
