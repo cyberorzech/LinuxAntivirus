@@ -8,7 +8,9 @@ Antivirus::Antivirus() {
   cout << "Initializing components..." << endl;
   cout << "Choosing operational mode." << endl;
   Mode mode;
-  string input;
-  cin >> input;
-  mode.setMode(input);
+  do {
+    string input;
+    cin >> input;
+    if (mode.setMode(input)) modeSet = true;
+  } while (modeSet == false);
 }

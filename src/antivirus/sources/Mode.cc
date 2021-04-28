@@ -9,12 +9,14 @@ Mode::Mode() {
        << endl;
 }
 
-void Mode::setMode(std::string choice) {
+bool Mode::setMode(std::string choice) {
   const char* input = choice.c_str();
   try {
     Mode::checkMode(input);
+    return true;
   } catch (const char* msg) {
     cerr << msg << endl;
+    return false;
   }
 }
 

@@ -3,6 +3,8 @@
 
 #include <iostream>
 class Antivirus {
+  bool modeSet;
+
  public:
   Antivirus();
 };

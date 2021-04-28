@@ -12,7 +12,7 @@ class Mode {
 
  public:
   Mode();
-  void setMode(std::string);
+  bool setMode(std::string);
   std::string getMode();
 };
 
