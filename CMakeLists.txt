@@ -13,6 +13,7 @@ set_target_properties(main
         CXX_STANDARD_REQUIRED ON
 )
 
+
 enable_testing()
 add_executable(tester src/tests/tester.cpp)
 add_test(Tester tester)
