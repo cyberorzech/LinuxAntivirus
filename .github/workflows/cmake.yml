@@ -27,7 +27,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Update compiler
-      run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+      run: |
+           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
            sudo apt update
            sudo apt-get install gcc-9 g++-9 -y
       if: matrix.os == 'ubuntu-18.04'
