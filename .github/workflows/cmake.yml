@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Update compiler
-      run: apt-get install g++ -y
+      run: sudo apt-get install g++ -y
       if: matrix.os == 'ubuntu-18.04'
     
     - name: Configure CMake on ${{ matrix.os }} OS
