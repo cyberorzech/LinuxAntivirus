@@ -29,7 +29,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Update compiler
       env:
-        CXXC: ${{ matrix.compiler }}
+        CXX: ${{ matrix.compiler }}
       run: |
            sudo add-apt-repository ppa:ubuntu-toolchain-r/test
            sudo apt update
@@ -40,13 +40,13 @@ jobs:
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       env:
-        CXXC: ${{ matrix.compiler }}
+        CXX: ${{ matrix.compiler }}
       run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       # Build your program with the given configuration
       env:
-        CXXC: ${{ matrix.compiler }}
+        CXX: ${{ matrix.compiler }}
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
     - name: Test
