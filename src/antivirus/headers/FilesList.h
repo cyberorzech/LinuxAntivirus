@@ -7,7 +7,7 @@
 #include <vector>
 
 class FilesList {
-  std::string files;  // should be vector
+  const char* files;  // should be vector
   std::string path;
   std::string result;
 

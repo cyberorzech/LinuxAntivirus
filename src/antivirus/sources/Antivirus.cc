@@ -17,8 +17,10 @@ Antivirus::Antivirus() {
   cout << "Looking for necessary files." << endl;
   FilesList fileslist;
   try {
-    fileslist.setPath("./");
+    fileslist.setPath("../emptydir");
     hasNecessaryFiles = true;
+    fileslist.searchForFiles();
+    cout << fileslist.getFiles() << endl;
   } catch (const char* msg) {
     cerr << msg << endl;
     exit(1);
