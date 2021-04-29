@@ -4,6 +4,7 @@
 #include <iostream>
 class Antivirus {
   bool modeSet;
+  bool hasNecessaryFiles;
 
  public:
   Antivirus();

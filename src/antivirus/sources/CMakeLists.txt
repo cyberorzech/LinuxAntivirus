@@ -1,1 +1,1 @@
-add_library(antivirus Antivirus.cc Mode.cc)
+add_library(antivirus Antivirus.cc Mode.cc FilesList.cc)
