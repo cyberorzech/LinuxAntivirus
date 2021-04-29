@@ -1,4 +1,10 @@
+#if __cplusplus < 201703L
+#error abc
+#endif
+
 #include "../headers/FilesList.h"
+
+#include <filesystem>
 
 using std::cin;
 using std::cout;
@@ -17,9 +23,9 @@ bool FilesList::setPath(string input) {
 
 bool FilesList::searchForFiles() {
   result = "";
-  for (const auto& file : recursive_directory_iterator(path)) {
-    result.append(file.path());
-    result.append("\n");
-  }
+  // for (const auto& file : recursive_directory_iterator(path)) {
+  //   result.append(file.path());
+  //   result.append("\n");
+  // }
   return 0;
 }

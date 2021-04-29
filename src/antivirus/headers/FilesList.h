@@ -6,17 +6,15 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class FilesList {
-  string files;  // should be vector
-  string path;
-  string result;
+  std::string files;  // should be vector
+  std::string path;
+  std::string result;
 
  public:
-  bool setPath(string);
+  bool setPath(std::string);
   bool searchForFiles();
-  string getFiles() { return result; };
+  std::string getFiles() { return result; };
 };
 
 #endif
