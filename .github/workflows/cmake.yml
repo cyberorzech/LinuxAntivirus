@@ -22,12 +22,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04]
+        os: [ubuntu-18.04, ubuntu-20.04]
 
     steps:
     - uses: actions/checkout@v2
     - name: Update compiler
-      run: sudo apt-get install g++-8 -y
+      run: sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+           sudo apt update
+           sudo apt-get install gcc-9 g++-9 -y
       if: matrix.os == 'ubuntu-18.04'
     
     - name: Configure CMake on ${{ matrix.os }} OS
