@@ -18,7 +18,7 @@ bool FilesList::setPath(string input) {
 }
 
 bool FilesList::searchForFiles() {
-  result = "";
+  string result = "";
   for (const auto& file : recursive_directory_iterator(path)) {
     result.append(file.path());
     result.append("\n");

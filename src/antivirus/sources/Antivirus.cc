@@ -19,7 +19,7 @@ Antivirus::Antivirus() {
   try {
     necessaryFiles.setPath("../.");
     necessaryFiles.searchForFiles();
-    cout << necessaryFiles.getFiles() << endl;
+    necessaryFiles.checkNecessaryFiles();
     hasNecessaryFiles = true;
   } catch (const char* msg) {
     cerr << msg << endl;
