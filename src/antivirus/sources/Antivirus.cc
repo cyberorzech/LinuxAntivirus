@@ -16,30 +16,23 @@ Antivirus::Antivirus() {
   } while (modeSet == false);
   cout << "Looking for necessary files." << endl;
   NecessaryFilesList necessaryFiles;
-  try {
-    necessaryFiles.setPath("../.");
-    necessaryFiles.searchForFiles();
-    necessaryFiles.checkNecessaryFiles();
-    hasNecessaryFiles = true;
-  } catch (const char* msg) {
-    cerr << msg << endl;
-    exit(1);
-  }
-
-  // cout << "Looking for necessary files." << endl;
-  // FilesList fileslist;
   // try {
-  //   fileslist.setPath("../emptydir");
+  //   necessaryFiles.setPath("../.");
+  //   necessaryFiles.searchForFiles();
+  //   necessaryFiles.checkNecessaryFiles();
   //   hasNecessaryFiles = true;
-  //   fileslist.searchForFiles();
-  //   cout << fileslist.getFiles() << endl;
   // } catch (const char* msg) {
   //   cerr << msg << endl;
   //   exit(1);
   // }
 
-  // initializing routine
+  // initialization routine, prepare stats
   reportComponentsState();
+  string x(mode.getMode());
+  cout << "ASDASDASDASD " << x << endl;
+  if (x == "file") {
+    // run file scan
+  }
 }
 
 void Antivirus::reportComponentsState() {

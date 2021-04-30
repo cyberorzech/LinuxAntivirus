@@ -20,6 +20,8 @@ bool Mode::setMode(std::string choice) {
   }
 }
 
+const char* Mode::getMode() { return mode.c_str(); }
+
 int Mode::checkMode(const char* input) {
   if (!strcmp(input, "file"))
     return 1;

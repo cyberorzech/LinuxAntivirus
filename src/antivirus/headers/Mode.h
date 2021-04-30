@@ -8,12 +8,12 @@
 
 class Mode {
   std::string mode;
-  int checkMode(const char *);
+  int checkMode(const char*);
 
  public:
   Mode();
   bool setMode(std::string);
-  std::string getMode();
+  const char* getMode();
 };
 
 #endif
