@@ -1,5 +1,6 @@
 #include "../headers/Antivirus.h"
 
+#include "../headers/Directories.h"
 #include "../headers/Mode.h"
 #include "../headers/NecessaryFilesList.h"
 
@@ -16,11 +17,15 @@ Antivirus::Antivirus() {
   } while (modeSet == false);
   cout << "Looking for necessary files." << endl;
   NecessaryFilesList necessaryFiles;
+  Directories dirs;
   try {
     necessaryFiles.setPath("../.");
     necessaryFiles.searchForFiles();
     necessaryFiles.checkNecessaryFiles();
     hasNecessaryFiles = true;
+    if (!dirs.createDir("quarantine")) {
+      cout << "Quarantine directory has been created successfully." << endl;
+    }
   } catch (const char* msg) {
     cerr << msg << endl;
     exit(1);
