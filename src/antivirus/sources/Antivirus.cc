@@ -1,7 +1,7 @@
 #include "../headers/Antivirus.h"
 
-#include "../headers/FilesList.h"
 #include "../headers/Mode.h"
+#include "../headers/NecessaryFilesList.h"
 
 using namespace std;
 
@@ -15,16 +15,28 @@ Antivirus::Antivirus() {
     if (mode.setMode(input)) modeSet = true;
   } while (modeSet == false);
   cout << "Looking for necessary files." << endl;
-  FilesList fileslist;
+  NecessaryFilesList necessaryFiles;
   try {
-    fileslist.setPath("../emptydir");
+    necessaryFiles.setPath("../.");
+    necessaryFiles.searchForFiles();
+    necessaryFiles.checkNecessaryFiles();
     hasNecessaryFiles = true;
-    fileslist.searchForFiles();
-    cout << fileslist.getFiles() << endl;
   } catch (const char* msg) {
     cerr << msg << endl;
     exit(1);
   }
+
+  // cout << "Looking for necessary files." << endl;
+  // FilesList fileslist;
+  // try {
+  //   fileslist.setPath("../emptydir");
+  //   hasNecessaryFiles = true;
+  //   fileslist.searchForFiles();
+  //   cout << fileslist.getFiles() << endl;
+  // } catch (const char* msg) {
+  //   cerr << msg << endl;
+  //   exit(1);
+  // }
 
   // initializing routine
   reportComponentsState();
